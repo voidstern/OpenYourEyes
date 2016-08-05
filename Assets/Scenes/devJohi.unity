@@ -95,6 +95,65 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000011720877232, guid: 850c6eea782c84cfc9ed92f550f84801,
     type: 2}
   m_PrefabInternal: {fileID: 1816189897}
+--- !u!95 &558081797
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 558081791}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 705ce758aaa5c462a980b64bb0f09c24, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!1001 &1337434619
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000011201274514, guid: a725536ea0cc546799ba610e7950f38e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011201274514, guid: a725536ea0cc546799ba610e7950f38e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011201274514, guid: a725536ea0cc546799ba610e7950f38e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011201274514, guid: a725536ea0cc546799ba610e7950f38e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011201274514, guid: a725536ea0cc546799ba610e7950f38e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011201274514, guid: a725536ea0cc546799ba610e7950f38e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011201274514, guid: a725536ea0cc546799ba610e7950f38e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011201274514, guid: a725536ea0cc546799ba610e7950f38e, type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a725536ea0cc546799ba610e7950f38e, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1816189897
 Prefab:
   m_ObjectHideFlags: 0
@@ -133,6 +192,32 @@ Prefab:
     - target: {fileID: 4000011734007670, guid: 850c6eea782c84cfc9ed92f550f84801, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212000010058090428, guid: 850c6eea782c84cfc9ed92f550f84801,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8341dcb64780046a59215e6dfa3f0cfb,
+        type: 3}
+    - target: {fileID: 114000013804237932, guid: 850c6eea782c84cfc9ed92f550f84801,
+        type: 2}
+      propertyPath: maxNumberOfJumps
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 50000013324897750, guid: 850c6eea782c84cfc9ed92f550f84801,
+        type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50000013324897750, guid: 850c6eea782c84cfc9ed92f550f84801,
+        type: 2}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013804237932, guid: 850c6eea782c84cfc9ed92f550f84801,
+        type: 2}
+      propertyPath: maxSpeed
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 850c6eea782c84cfc9ed92f550f84801, type: 2}
@@ -189,7 +274,7 @@ Prefab:
     - target: {fileID: 114000011419151866, guid: ba2b4fa8fa54b4c3c84e048b8d6359e1,
         type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba2b4fa8fa54b4c3c84e048b8d6359e1, type: 2}
