@@ -44,14 +44,7 @@ public class BlendGreyscale : MonoBehaviour {
 			if (!unblending && Input.GetButtonDown("Fire1") && gray.enabled == true)
 			{
 				coolDownTimer = coolDown;
-				gray.enabled = false;
 				vignette.enabled = true;
-				foreach (GameObject obj in closedEyesObjects) {
-					obj.SetActive(false);
-				}
-				foreach (GameObject obj in openEyesObjects) {
-					obj.SetActive(true);
-				}
 				unblending = true;
 				vignette.intensity = 0;
 				bgmScript.switchToLifeBGM();
@@ -90,10 +83,18 @@ public class BlendGreyscale : MonoBehaviour {
 				else
                 {
                     vignette.intensity = 0;
-                //vignette.enabled = false;
-                screenOverlay.intensity = 1;
-                    lastFlash = 1;
-                unblending = false;
+                	//  vignette.enabled = false;
+                	screenOverlay.intensity = 1;
+					lastFlash = 1;
+					gray.enabled = false;
+                	unblending = false;
+					foreach (GameObject obj in closedEyesObjects) {
+						obj.SetActive(false);
+					}
+					foreach (GameObject obj in openEyesObjects) {
+						obj.SetActive(true);
+					}
+
 				}
 			}
 
