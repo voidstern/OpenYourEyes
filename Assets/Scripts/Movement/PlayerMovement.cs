@@ -46,6 +46,7 @@ public class PlayerMovement : InputController {
 			rigidb.AddForce(Vector2.up * Utility.Physics2D.realForce(jumpForce));
 			availableJumps--;
 			didJump = false;
+            animator.SetBool("isGrounded", false);
             animator.SetTrigger("isJumping");
 			// GetComponent<AudioSource>().PlayOneShot(jumpingSound);
 		}
@@ -75,10 +76,15 @@ public class PlayerMovement : InputController {
 	// handle Collision with Ground and restore available jumps
 	void OnCollisionEnter2D(Collision2D collision) {
 		//TODO: shorten the raycast so player cant jump when rolling over a hill and in air
-		RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.1f);
+		RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 2.5f);
 
 		if (hit.collider != null) {
 			availableJumps = maxNumberOfJumps;
+            animator.SetBool("isGrounded", true);
 		}
+        else
+        {
+            animator.SetBool("isGrounded", false);
+        }
 	}
 }
