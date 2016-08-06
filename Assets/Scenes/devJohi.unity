@@ -95,35 +95,13 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000011720877232, guid: 850c6eea782c84cfc9ed92f550f84801,
     type: 2}
   m_PrefabInternal: {fileID: 1816189897}
---- !u!1 &856488918 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000013111173850, guid: a725536ea0cc546799ba610e7950f38e,
-    type: 2}
-  m_PrefabInternal: {fileID: 1337434619}
---- !u!251 &856488921
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 856488918}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseOneWay: 0
-  m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
-  m_SideArc: 1
 --- !u!1 &1042833177 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000010284467192, guid: a725536ea0cc546799ba610e7950f38e,
     type: 2}
   m_PrefabInternal: {fileID: 1337434619}
---- !u!251 &1042833180
-PlatformEffector2D:
+--- !u!252 &1042833180
+SurfaceEffector2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -133,12 +111,12 @@ PlatformEffector2D:
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_UseOneWay: 0
-  m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
-  m_SideArc: 1
+  m_Speed: 10
+  m_SpeedVariation: 0
+  m_ForceScale: 1
+  m_UseContactForce: 0
+  m_UseFriction: 1
+  m_UseBounce: 1
 --- !u!1001 &1337434619
 Prefab:
   m_ObjectHideFlags: 0
@@ -152,7 +130,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011201274514, guid: a725536ea0cc546799ba610e7950f38e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 25
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 4000011201274514, guid: a725536ea0cc546799ba610e7950f38e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -178,8 +156,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 60000012713363496, guid: a725536ea0cc546799ba610e7950f38e,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_UsedByEffector
       value: 1
       objectReference: {fileID: 0}
@@ -188,9 +165,36 @@ Prefab:
       propertyPath: m_UsedByEffector
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 60000010236171594, guid: a725536ea0cc546799ba610e7950f38e,
+        type: 2}
+      propertyPath: m_UsedByEffector
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a725536ea0cc546799ba610e7950f38e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1337434620 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000010885635542, guid: a725536ea0cc546799ba610e7950f38e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1337434619}
+--- !u!251 &1337434621
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1337434620}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1001 &1816189897
 Prefab:
   m_ObjectHideFlags: 0
@@ -200,11 +204,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000011734007670, guid: 850c6eea782c84cfc9ed92f550f84801, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -14
       objectReference: {fileID: 0}
     - target: {fileID: 4000011734007670, guid: 850c6eea782c84cfc9ed92f550f84801, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4000011734007670, guid: 850c6eea782c84cfc9ed92f550f84801, type: 2}
       propertyPath: m_LocalPosition.z
