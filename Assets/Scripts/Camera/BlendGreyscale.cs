@@ -7,8 +7,10 @@ public class BlendGreyscale : MonoBehaviour {
     bool blending = false;
     bool unblending = false;
     bool grayscale = false;
-	BGM bgmScript;
+    int lastFlash = 0;
+    BGM bgmScript;
     public VignetteAndChromaticAberration vignette;
+    public ScreenOverlay screenOverlay;
 
     public GameObject[] closedEyesObjects;
     public GameObject[] openEyesObjects;
@@ -51,22 +53,47 @@ public class BlendGreyscale : MonoBehaviour {
 					obj.SetActive(true);
 				}
 				unblending = true;
-				vignette.intensity = 1;
+				vignette.intensity = 0;
 				bgmScript.switchToLifeBGM();
 				//blending = true;
 			}
-		}
+		}/*
+        if(lastFlash >= 1 && lastFlash < 8)
+        {
+            vignette.intensity = 1;
+            gray.rampOffset = 0;
+            gray.enabled = false;
+            lastFlash++;
+        }*/
+        if(lastFlash >= 1)
+        {
 
-			if (unblending)
+            if (screenOverlay.intensity > 0)
+            {
+                screenOverlay.intensity -= 0.1f;
+            }
+            else
+            {
+                screenOverlay.intensity = 0;
+                lastFlash = 0;
+            }
+            Debug.Log(vignette.intensity);
+        }
+       
+
+        if (unblending)
 			{
-				if (vignette.intensity > 0)
+				if (vignette.intensity <= 1)
 				{
-					vignette.intensity -= 0.1f;
+					vignette.intensity += 0.05f;
 				}
 				else
-				{
-					vignette.intensity = 0;
-					unblending = false;
+                {
+                    vignette.intensity = 0;
+                //vignette.enabled = false;
+                screenOverlay.intensity = 1;
+                    lastFlash = 1;
+                unblending = false;
 				}
 			}
 
@@ -76,6 +103,7 @@ public class BlendGreyscale : MonoBehaviour {
 				{
 					vignette.intensity += 0.1f;
 				}
+           
 				else
 				{
 					if (!grayscale)
@@ -97,8 +125,9 @@ public class BlendGreyscale : MonoBehaviour {
 						gray.rampOffset += 0.05f;
 						if (gray.rampOffset >= 0)
 						{
-							blending = false;
-							grayscale = false;
+                            gray.rampOffset = 0;
+                            blending = false;
+                            grayscale = false;
 						}
 					}
 				}
