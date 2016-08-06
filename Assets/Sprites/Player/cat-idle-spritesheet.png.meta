@@ -1,15 +1,11 @@
 fileFormatVersion: 2
-guid: 8341dcb64780046a59215e6dfa3f0cfb
-timeCreated: 1470422167
+guid: f53424a481530405288376f009d80a4f
+timeCreated: 1470472692
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: playerCat_0
-    21300002: playerCat_1
-    21300004: playerCat_2
-    21300006: playerCat_3
-    21300008: playerCat_4
-    21300010: playerCat_5
+    21300000: cat-idle-spritesheet_0
+    21300002: cat-idle-spritesheet_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -59,7 +55,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: playerCat_0
+      name: cat-idle-spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -72,62 +68,10 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: playerCat_1
+      name: cat-idle-spritesheet_1
       rect:
         serializedVersion: 2
         x: 128
-        y: 0
-        width: 128
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: playerCat_2
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 128
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: playerCat_3
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 128
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: playerCat_4
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 0
-        width: 128
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: playerCat_5
-      rect:
-        serializedVersion: 2
-        x: 640
         y: 0
         width: 128
         height: 64

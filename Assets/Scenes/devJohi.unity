@@ -95,23 +95,50 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000011720877232, guid: 850c6eea782c84cfc9ed92f550f84801,
     type: 2}
   m_PrefabInternal: {fileID: 1816189897}
---- !u!95 &558081797
-Animator:
-  serializedVersion: 3
+--- !u!1 &856488918 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000013111173850, guid: a725536ea0cc546799ba610e7950f38e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1337434619}
+--- !u!251 &856488921
+PlatformEffector2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 558081791}
+  m_GameObject: {fileID: 856488918}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 705ce758aaa5c462a980b64bb0f09c24, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
+--- !u!1 &1042833177 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000010284467192, guid: a725536ea0cc546799ba610e7950f38e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1337434619}
+--- !u!251 &1042833180
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1042833177}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseOneWay: 0
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1001 &1337434619
 Prefab:
   m_ObjectHideFlags: 0
@@ -150,6 +177,16 @@ Prefab:
     - target: {fileID: 4000011201274514, guid: a725536ea0cc546799ba610e7950f38e, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 60000012713363496, guid: a725536ea0cc546799ba610e7950f38e,
+        type: 2}
+      propertyPath: m_UsedByEffector
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 60000010608813770, guid: a725536ea0cc546799ba610e7950f38e,
+        type: 2}
+      propertyPath: m_UsedByEffector
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a725536ea0cc546799ba610e7950f38e, type: 2}
@@ -192,32 +229,6 @@ Prefab:
     - target: {fileID: 4000011734007670, guid: 850c6eea782c84cfc9ed92f550f84801, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212000010058090428, guid: 850c6eea782c84cfc9ed92f550f84801,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 8341dcb64780046a59215e6dfa3f0cfb,
-        type: 3}
-    - target: {fileID: 114000013804237932, guid: 850c6eea782c84cfc9ed92f550f84801,
-        type: 2}
-      propertyPath: maxNumberOfJumps
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 50000013324897750, guid: 850c6eea782c84cfc9ed92f550f84801,
-        type: 2}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 50000013324897750, guid: 850c6eea782c84cfc9ed92f550f84801,
-        type: 2}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013804237932, guid: 850c6eea782c84cfc9ed92f550f84801,
-        type: 2}
-      propertyPath: maxSpeed
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 850c6eea782c84cfc9ed92f550f84801, type: 2}
