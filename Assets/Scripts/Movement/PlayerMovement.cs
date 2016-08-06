@@ -46,7 +46,7 @@ public class PlayerMovement : InputController {
 			rigidb.AddForce(Vector2.up * Utility.Physics2D.realForce(jumpForce));
 			availableJumps--;
 			didJump = false;
-			// GetComponent<Animator>().SetTrigger("isJumping");
+            animator.SetTrigger("isJumping");
 			// GetComponent<AudioSource>().PlayOneShot(jumpingSound);
 		}
 
