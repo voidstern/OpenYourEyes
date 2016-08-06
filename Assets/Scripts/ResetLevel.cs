@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class ResetLevel : MonoBehaviour {
 
-	public GameObject player;
+	// public GameObject player;
 	public int gameOverPosY = -1;
 
 	// Use this for initialization
@@ -17,7 +17,7 @@ public class ResetLevel : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		if (player.transform.position.y < gameOverPosY) {
+		if (transform.position.y < gameOverPosY) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		}
 	}
