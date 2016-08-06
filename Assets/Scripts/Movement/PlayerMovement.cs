@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(Animation))]
 public class PlayerMovement : InputController {
 	[SerializeField] protected float jumpForce;
+	[SerializeField] protected float moveForce;
 	[SerializeField] protected int maxNumberOfJumps = 1;
 	// [SerializeField] protected AudioClip jumpingSound;
-	[SerializeField] private float maxSpeed = 10f;
+	[SerializeField] private float maxVelocity = 10f;
 	[SerializeField] private bool reverseSpriteX = false;
 
 	protected Rigidbody2D rigidb;
@@ -59,7 +59,17 @@ public class PlayerMovement : InputController {
 		}
 
 		transform.localScale = new Vector3(faceDirection, 1, 1);
-		rigidb.velocity = new Vector2(inputHorizontal * maxSpeed, rigidb.velocity.y);
+
+		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
+		if(inputHorizontal * rigidb.velocity.x < maxVelocity)
+			// ... add a force to the player.
+			rigidb.AddForce(Vector2.right * inputHorizontal * Utility.Physics2D.realForce(moveForce));
+
+		// If the player's horizontal velocity is greater than the maxSpeed...
+		if(Mathf.Abs(rigidb.velocity.x) > maxVelocity)
+			// ... set the player's velocity to the maxSpeed in the x axis.
+			rigidb.velocity = new Vector2(Mathf.Sign(rigidb.velocity.x) * maxVelocity, rigidb.velocity.y);
+
 	}
 	// handle Collision with Ground and restore available jumps
 	void OnCollisionEnter2D(Collision2D collision) {

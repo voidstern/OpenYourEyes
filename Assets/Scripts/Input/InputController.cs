@@ -16,8 +16,8 @@ public class InputController : MonoBehaviour {
 		
 #if UNITY_STANDALONE
 		inputJump = Input.GetButtonDown("Jump");
-		inputHorizontal = Input.GetAxis("Horizontal");
-		inputVertical = Input.GetAxis("Vertical");
+		inputHorizontal = Input.GetAxisRaw("Horizontal");
+		inputVertical = Input.GetAxisRaw("Vertical");
 #elif UNITY_IOS || UNITY_ANDROID
 		if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) {
 			inputJump = true;

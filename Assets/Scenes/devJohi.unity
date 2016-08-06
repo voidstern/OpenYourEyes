@@ -106,14 +106,14 @@ SurfaceEffector2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1042833177}
-  m_Enabled: 1
+  m_Enabled: 0
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Speed: 10
+  m_Speed: 6
   m_SpeedVariation: 0
-  m_ForceScale: 1
+  m_ForceScale: 0.1
   m_UseContactForce: 0
   m_UseFriction: 1
   m_UseBounce: 1
@@ -170,6 +170,11 @@ Prefab:
       propertyPath: m_UsedByEffector
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 60000010608813770, guid: a725536ea0cc546799ba610e7950f38e,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 809e70ffc1adf4cd48b3a19ed353e715, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a725536ea0cc546799ba610e7950f38e, type: 2}
   m_IsPrefabParent: 0
@@ -232,6 +237,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011734007670, guid: 850c6eea782c84cfc9ed92f550f84801, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013804237932, guid: 850c6eea782c84cfc9ed92f550f84801,
+        type: 2}
+      propertyPath: moveForce
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
