@@ -30,6 +30,7 @@ public class PauseScreen : MonoBehaviour {
 	void Update () {
 	    if(Input.GetButtonDown("Cancel"))
         {
+
             if(paused)
             {
                 ResumeGame();
@@ -38,16 +39,13 @@ public class PauseScreen : MonoBehaviour {
             {
                 PauseGame();
             }
-            paused = !paused;
+			paused = !paused;
         }
-        if(paused && Input.GetButtonDown("Submit"))
-        {
-            QuitGame();
-        }
-        if (paused && Input.GetButtonDown("Fire2"))
+        if (paused && Input.GetButtonDown("Jump"))
         {
             if (buttons[active].name.Equals("ResumeButton"))
             {
+				paused = !paused;
                 ResumeGame();
             }
             if (buttons[active].name.Equals("QuitButton"))

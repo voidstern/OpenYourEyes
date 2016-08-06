@@ -33,7 +33,7 @@ public class BlendGreyscale : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (coolDownTimer == 0) {
+		if (coolDownTimer == 0 && !GetComponent<PauseScreen>().getState()) {
 			if (!blending && Input.GetButtonDown("Fire1") && gray.enabled == false)
 			{
 				//gray.enabled = !gray.enabled;

@@ -16,6 +16,7 @@ public class PlayerMovement : InputController {
 	[SerializeField] private Transform groundPointRight;
 	[SerializeField] private float groundPointRadius;
 	[SerializeField] private LayerMask groundMask;
+	[SerializeField] private Camera camera;
 
 	protected Rigidbody2D rigidb;
 	protected Animator animator;
@@ -37,11 +38,13 @@ public class PlayerMovement : InputController {
 	}
 	// Update is called once per frame
 	protected override void Update() {
-		base.Update();
-		isGroundedLeft = Physics2D.OverlapCircle(groundPointLeft.position, groundPointRadius, groundMask);
-		isGroundedRight = Physics2D.OverlapCircle(groundPointRight.position, groundPointRadius, groundMask);
-		if (inputJump && availableJumps > 0) {
-			didJump = true;
+		if (!camera.GetComponent<PauseScreen>().getState()) {
+			base.Update();
+			isGroundedLeft = Physics2D.OverlapCircle(groundPointLeft.position, groundPointRadius, groundMask);
+			isGroundedRight = Physics2D.OverlapCircle(groundPointRight.position, groundPointRadius, groundMask);
+			if (inputJump && availableJumps > 0) {
+				didJump = true;
+			}
 		}
 	}
 	// FixedUpdate is called once per timeinterval (Edit->ProjSetting->Time), use for Physics
