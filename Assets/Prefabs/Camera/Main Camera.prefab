@@ -60,6 +60,8 @@ GameObject:
   - 114: {fileID: 114000013507910338}
   - 114: {fileID: 114000011260401062}
   - 114: {fileID: 114000013300268622}
+  - 114: {fileID: 114000013493136148}
+  - 114: {fileID: 114000013871392510}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -160,7 +162,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: e145a830707124210920bd77139d8752, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -234,7 +236,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: c802b9d0054564ca997244c84461f539, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -344,7 +346,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012148076712}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 243a781cad112c75d0008dfa8d76c639, type: 3}
   m_Name: 
@@ -366,6 +368,21 @@ MonoBehaviour:
   lifeBGM: {fileID: 1000011561699252}
   dreamBGM: {fileID: 1000010199113264}
   fadeTime: 0.4
+--- !u!114 &114000013493136148
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012148076712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85fd1fac0c24346eea72cc7529abd4f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gray: {fileID: 114000011419151866}
+  vignette: {fileID: 114000013871392510}
+  closedEyesObjects: []
+  openEyesObjects: []
 --- !u!114 &114000013507910338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -380,6 +397,29 @@ MonoBehaviour:
   referenceOrthographicSize: 768
   referencePixelsPerUnit: 64
   overrides: []
+--- !u!114 &114000013871392510
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012148076712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd6d4281e5d7cd44d8c6e38bc2c1b8d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mode: 0
+  intensity: 0
+  chromaticAberration: 0.2
+  axialAberration: 0.5
+  blur: 0
+  blurSpread: 0.75
+  luminanceDependency: 0.25
+  blurDistance: 2.5
+  vignetteShader: {fileID: 4800000, guid: 627943dc7a9a74286b70a4f694a0acd5, type: 3}
+  separableBlurShader: {fileID: 4800000, guid: e97c14fbb5ea04c3a902cc533d7fc5d1, type: 3}
+  chromAberrationShader: {fileID: 4800000, guid: 2b4f29398d9484ccfa9fd220449f5eee,
+    type: 3}
 --- !u!124 &124000014277159964
 Behaviour:
   m_ObjectHideFlags: 1

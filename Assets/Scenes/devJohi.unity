@@ -141,25 +141,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000011720877232, guid: 850c6eea782c84cfc9ed92f550f84801,
     type: 2}
   m_PrefabInternal: {fileID: 1816189897}
---- !u!1 &1003786576 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000012148076712, guid: ba2b4fa8fa54b4c3c84e048b8d6359e1,
-    type: 2}
-  m_PrefabInternal: {fileID: 2016021200}
---- !u!114 &1003786577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1003786576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3de72a867c10443e78c8825c6897efcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeBGM: {fileID: 2016021202}
-  dreamBGM: {fileID: 2016021201}
-  fadeTime: 0.4
 --- !u!1 &1042833177 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1000010284467192, guid: a725536ea0cc546799ba610e7950f38e,
@@ -361,19 +342,14 @@ Prefab:
       propertyPath: backgrounds.Array.data[1]
       value: 
       objectReference: {fileID: 2081320580}
+    - target: {fileID: 114000013493136148, guid: ba2b4fa8fa54b4c3c84e048b8d6359e1,
+        type: 2}
+      propertyPath: coolDown
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba2b4fa8fa54b4c3c84e048b8d6359e1, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &2016021201 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000010199113264, guid: ba2b4fa8fa54b4c3c84e048b8d6359e1,
-    type: 2}
-  m_PrefabInternal: {fileID: 2016021200}
---- !u!1 &2016021202 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000011561699252, guid: ba2b4fa8fa54b4c3c84e048b8d6359e1,
-    type: 2}
-  m_PrefabInternal: {fileID: 2016021200}
 --- !u!4 &2045465145 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000011845606834, guid: fdda34f769ee9468f97e635c26149420,
