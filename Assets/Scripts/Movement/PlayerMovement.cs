@@ -62,7 +62,7 @@ public class PlayerMovement : InputController {
 		transform.localScale = new Vector3(faceDirection, 1, 1);
 
 		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
-		if(Mathf.Abs(inputHorizontal * rigidb.velocity.x) < maxVelocity && inputHorizontal != 0) {
+		if(inputHorizontal * rigidb.velocity.x < maxVelocity && inputHorizontal != 0) {
 			// ... add a force to the player.
 			rigidb.AddForce(Vector2.right * inputHorizontal * Utility.Physics2D.realForce(moveForce));
 
