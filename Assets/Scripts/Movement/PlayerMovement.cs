@@ -61,14 +61,15 @@ public class PlayerMovement : InputController {
 		transform.localScale = new Vector3(faceDirection, 1, 1);
 
 		// If the player is changing direction (h has a different sign to velocity.x) or hasn't reached maxSpeed yet...
-		if(inputHorizontal * rigidb.velocity.x < maxVelocity)
+		if(Mathf.Abs(inputHorizontal * rigidb.velocity.x) < maxVelocity && inputHorizontal != 0) {
 			// ... add a force to the player.
 			rigidb.AddForce(Vector2.right * inputHorizontal * Utility.Physics2D.realForce(moveForce));
 
-		// If the player's horizontal velocity is greater than the maxSpeed...
-		if(Mathf.Abs(rigidb.velocity.x) > maxVelocity)
-			// ... set the player's velocity to the maxSpeed in the x axis.
-			rigidb.velocity = new Vector2(Mathf.Sign(rigidb.velocity.x) * maxVelocity, rigidb.velocity.y);
+			// If the player's horizontal velocity is greater than the maxSpeed...
+			if (Mathf.Abs(rigidb.velocity.x) > maxVelocity)
+				// ... set the player's velocity to the maxSpeed in the x axis.
+				rigidb.velocity = new Vector2(Mathf.Sign(rigidb.velocity.x) * maxVelocity, rigidb.velocity.y);
+		}
 
 	}
 	// handle Collision with Ground and restore available jumps
