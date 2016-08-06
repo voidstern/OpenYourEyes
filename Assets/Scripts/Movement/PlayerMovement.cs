@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Net.NetworkInformation;
+using UnityEngine;
+
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
@@ -10,6 +12,10 @@ public class PlayerMovement : InputController {
 	// [SerializeField] protected AudioClip jumpingSound;
 	[SerializeField] private float maxVelocity = 10f;
 	[SerializeField] private bool reverseSpriteX = false;
+	[SerializeField] private Transform groundPointLeft;
+	[SerializeField] private Transform groundPointRight;
+	[SerializeField] private float groundPointRadius;
+	[SerializeField] private LayerMask groundMask;
 
 	protected Rigidbody2D rigidb;
 	protected Animator animator;
@@ -17,6 +23,9 @@ public class PlayerMovement : InputController {
 	protected bool didJump;
 	protected float faceDirection = 1f;
 	protected float reverseModX;
+
+	protected bool isGroundedLeft;
+	protected bool isGroundedRight;
 	
 	protected override void Awake() {
 		base.Awake();
@@ -29,6 +38,8 @@ public class PlayerMovement : InputController {
 	// Update is called once per frame
 	protected override void Update() {
 		base.Update();
+		isGroundedLeft = Physics2D.OverlapCircle(groundPointLeft.position, groundPointRadius, groundMask);
+		isGroundedRight = Physics2D.OverlapCircle(groundPointRight.position, groundPointRadius, groundMask);
 		if (inputJump && availableJumps > 0) {
 			didJump = true;
 		}
@@ -36,8 +47,9 @@ public class PlayerMovement : InputController {
 	// FixedUpdate is called once per timeinterval (Edit->ProjSetting->Time), use for Physics
 	void FixedUpdate() {
 		// modify available jumps if player falls of edge, etc...
-		RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.1f);
-		if (hit.collider == null && availableJumps == maxNumberOfJumps) {
+		// RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.1f);
+		// if (hit.collider == null && availableJumps == maxNumberOfJumps) {
+		if (!isGroundedLeft && !isGroundedRight) {
 			availableJumps = maxNumberOfJumps - 1;
 		}
 
@@ -72,19 +84,28 @@ public class PlayerMovement : InputController {
 				rigidb.velocity = new Vector2(Mathf.Sign(rigidb.velocity.x) * maxVelocity, rigidb.velocity.y);
 		}
 
+		if (isGroundedRight || isGroundedLeft) {
+			availableJumps = maxNumberOfJumps;
+			animator.SetBool("isGrounded", true);
+		}
+		else
+		{
+			animator.SetBool("isGrounded", false);
+		}
+
 	}
 	// handle Collision with Ground and restore available jumps
-	void OnCollisionEnter2D(Collision2D collision) {
+	/* void OnCollisionEnter2D(Collision2D collision) {
 		//TODO: shorten the raycast so player cant jump when rolling over a hill and in air
-		RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 2.5f);
+		// RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 2.5f);
 
-		if (hit.collider != null) {
-			availableJumps = maxNumberOfJumps;
-            animator.SetBool("isGrounded", true);
-		}
-        else
-        {
-            animator.SetBool("isGrounded", false);
-        }
+		// if (hit.collider != null) {
+
+	} */
+
+	void OnDrawGizmos() {
+		Gizmos.color = Color.green;
+		Gizmos.DrawSphere(groundPointLeft.position,groundPointRadius);
+		Gizmos.DrawSphere(groundPointRight.position,groundPointRadius);
 	}
 }
