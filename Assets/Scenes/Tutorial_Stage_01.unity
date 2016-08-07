@@ -731,6 +731,49 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 349c92f05ae384be6aac6cc615b0d279, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &729666593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 729666594}
+  - 61: {fileID: 729666595}
+  m_Layer: 0
+  m_Name: RightWall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &729666594
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 729666593}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 98.26, y: 2.41, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1468912164}
+  m_RootOrder: 0
+--- !u!61 &729666595
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 729666593}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 977109cd89497418d97d5e698a3bad3e, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 3.342695}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 10.67485}
 --- !u!1 &777423684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1014,7 +1057,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000012184336012, guid: e8671c0ed702f42cab479d636ee52b33, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -22
+      value: -37
       objectReference: {fileID: 0}
     - target: {fileID: 4000012184336012, guid: e8671c0ed702f42cab479d636ee52b33, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1139,6 +1182,36 @@ Camera:
   m_PrefabParentObject: {fileID: 20000012707013778, guid: ba2b4fa8fa54b4c3c84e048b8d6359e1,
     type: 2}
   m_PrefabInternal: {fileID: 2008061783}
+--- !u!1 &1468912163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1468912164}
+  m_Layer: 0
+  m_Name: InvisibleWalls
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1468912164
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1468912163}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 729666594}
+  - {fileID: 1911904571}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
 --- !u!1001 &1500565546
 Prefab:
   m_ObjectHideFlags: 0
@@ -1562,6 +1635,49 @@ Transform:
   m_PrefabParentObject: {fileID: 4000013165321344, guid: 2e97320e71f5c44eab83636e762ac9c3,
     type: 2}
   m_PrefabInternal: {fileID: 1066806739}
+--- !u!1 &1911904570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1911904571}
+  - 61: {fileID: 1911904572}
+  m_Layer: 0
+  m_Name: LeftWall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1911904571
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1911904570}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -33.3, y: 3.41, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 1468912164}
+  m_RootOrder: 1
+--- !u!61 &1911904572
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1911904570}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 977109cd89497418d97d5e698a3bad3e, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 3.342695}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 10.67485}
 --- !u!4 &1934815675 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4000011217331216, guid: 349c92f05ae384be6aac6cc615b0d279,
