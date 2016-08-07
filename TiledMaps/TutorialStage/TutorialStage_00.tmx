@@ -42,22 +42,22 @@
   </tile>
   <tile id="7">
    <objectgroup draworder="index">
-    <object id="2" type="grassAngle" x="0.375" y="63.625">
-     <polygon points="0,0 63.625,-31.625 63.5,0.25"/>
+    <object id="2" type="grassAngle" x="0" y="64">
+     <polygon points="0.125,0.3125 64,-31.8125 64.125,0"/>
     </object>
    </objectgroup>
   </tile>
   <tile id="8">
    <objectgroup draworder="index">
     <object id="1" type="grassAngle" x="0.375" y="32">
-     <polygon points="0,0 63.625,-32.125 63.625,32.25 -0.25,32.125"/>
+     <polygon points="0,0 63.625,-32 63.625,32.25 -0.25,32.125"/>
     </object>
    </objectgroup>
   </tile>
   <tile id="9">
    <objectgroup draworder="index">
     <object id="1" type="grassAngle" x="0.375" y="63.75">
-     <polygon points="0,0 63.375,-21.375 63.625,0.25"/>
+     <polygon points="-0.4375,0.0625 63.375,-21.375 63.625,0.25"/>
     </object>
    </objectgroup>
   </tile>

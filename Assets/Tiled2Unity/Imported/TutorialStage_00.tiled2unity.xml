@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 8/6/2016 10:55:06 PM-->
+<!--Last exported: 8/7/2016 8:48:15 AM-->
 <Tiled2Unity version="1.0.7.6">
   <AssignMaterial mesh="mesh_0001" material="grassland_platforms" />
   <AssignMaterial mesh="mesh_0002" material="grassland_plants" />
@@ -37,23 +37,19 @@
       <GameObject name="Collision_grassAngle" layer="grassAngle">
         <PolygonCollider2D>
           <Path>92,-15.98438 91,-15.5 89.98438,-14.98438 90,-16 91,-16</Path>
-          <Path>86,-14.98438 85,-15.5 85,-16 86,-16</Path>
-          <Path>85,-15.5 84,-15.98438 84.98438,-15.98438</Path>
+          <Path>86,-15 84,-16 86,-16</Path>
           <Path>92,-16 92,-17 93,-17</Path>
           <Path>84,-16 83,-16.98438 84,-17</Path>
-          <Path>83,-16.98438 82,-17.5 82,-18 83,-18</Path>
           <Path>93,-17 93,-18 94,-18</Path>
-          <Path>82,-17.5 81,-17.98438 81.98438,-17.98438</Path>
-          <Path>30,-17.98438 29,-18.5 29,-19 30,-19</Path>
+          <Path>83,-17 81,-18 83,-18</Path>
           <Path>33,-18 33,-19 34,-19</Path>
+          <Path>30,-18 28,-19 30,-19</Path>
           <Path>95,-18 95,-19 96,-19</Path>
           <Path>79,-19 81,-19 80.98438,-18 80,-18.32813 79,-18.65625</Path>
-          <Path>29,-18.5 28,-18.98438 28.98438,-18.98438</Path>
-          <Path>78.98438,-18.65625 78,-18.98438 79,-19</Path>
-          <Path>72,-18.98438 71,-19.5 71,-20 72,-20</Path>
+          <Path>78.98438,-18.65625 77.98438,-18.98438 79,-19</Path>
           <Path>64,-19.98438 63.98438,-19.32813 63,-19 63,-20</Path>
+          <Path>72,-19 70,-20 72,-20</Path>
           <Path>65,-19.65625 64,-19.32813 64,-20 66,-20</Path>
-          <Path>71,-19.5 70,-19.98438 70.98438,-19.98438</Path>
         </PolygonCollider2D>
       </GameObject>
       <GameObject name="Collision_dirt" layer="dirt">

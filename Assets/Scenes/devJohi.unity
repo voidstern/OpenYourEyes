@@ -634,7 +634,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013296318496, guid: 98c1aa59682f34d7a89db4218dcc125d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 9.112
+      value: 9.116
       objectReference: {fileID: 0}
     - target: {fileID: 4000013296318496, guid: 98c1aa59682f34d7a89db4218dcc125d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -897,7 +897,22 @@ Prefab:
     - target: {fileID: 114000011260401062, guid: ba2b4fa8fa54b4c3c84e048b8d6359e1,
         type: 2}
       propertyPath: smoothing
-      value: 3
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000012707013778, guid: ba2b4fa8fa54b4c3c84e048b8d6359e1,
+        type: 2}
+      propertyPath: m_BackGroundColor.r
+      value: 0.6759299
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000012707013778, guid: ba2b4fa8fa54b4c3c84e048b8d6359e1,
+        type: 2}
+      propertyPath: m_BackGroundColor.g
+      value: 0.915456
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000012707013778, guid: ba2b4fa8fa54b4c3c84e048b8d6359e1,
+        type: 2}
+      propertyPath: m_BackGroundColor.b
+      value: 0.97794116
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba2b4fa8fa54b4c3c84e048b8d6359e1, type: 2}
