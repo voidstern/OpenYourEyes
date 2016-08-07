@@ -27,7 +27,11 @@ public class FinishStage : MonoBehaviour {
 		} else if (timer <= 0) {
 			pm.forceMove(0,0);
 		}
-	}
+        if (hasEntered && timer <= 0)
+        {
+            GetComponent<LevelLoader>().LoadNextLevel();
+        }
+    }
 
 	void OnTriggerEnter2D(Collider2D other) {
 		pm = GetComponent<PlayerMovement>();
