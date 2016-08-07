@@ -16,6 +16,9 @@ public class BlendGreyscale : MonoBehaviour {
     public GameObject[] openEyesObjects;
 	public float coolDown;
 	private float coolDownTimer;
+    
+    public Animator animator;
+    public RuntimeAnimatorController[] animController;
 
     // Use this for initialization
     void Start () {
@@ -29,6 +32,7 @@ public class BlendGreyscale : MonoBehaviour {
         }
 		bgmScript = GetComponent<BGM>();
 		coolDownTimer = 0;
+        animator.runtimeAnimatorController = animController[1];
     }
 	
 	// Update is called once per frame
@@ -36,7 +40,6 @@ public class BlendGreyscale : MonoBehaviour {
 		if (coolDownTimer == 0 && !GetComponent<PauseScreen>().getState()) {
 			if (!blending && Input.GetButtonDown("Fire1") && gray.enabled == false)
 			{
-				//gray.enabled = !gray.enabled;
 				coolDownTimer = coolDown;
 				blending = true;
 				bgmScript.switchToDreamBGM();
@@ -48,16 +51,9 @@ public class BlendGreyscale : MonoBehaviour {
 				unblending = true;
 				vignette.intensity = 0;
 				bgmScript.switchToLifeBGM();
-				//blending = true;
 			}
-		}/*
-        if(lastFlash >= 1 && lastFlash < 8)
-        {
-            vignette.intensity = 1;
-            gray.rampOffset = 0;
-            gray.enabled = false;
-            lastFlash++;
-        }*/
+		}
+
         if(lastFlash >= 1)
         {
 
@@ -83,10 +79,10 @@ public class BlendGreyscale : MonoBehaviour {
 				else
                 {
                     vignette.intensity = 0;
-                	//  vignette.enabled = false;
                 	screenOverlay.intensity = 1;
 					lastFlash = 1;
 					gray.enabled = false;
+                    animator.runtimeAnimatorController = animController[0];
                 	unblending = false;
 					foreach (GameObject obj in closedEyesObjects) {
 						obj.SetActive(false);
@@ -114,8 +110,9 @@ public class BlendGreyscale : MonoBehaviour {
 						vignette.enabled = false;
 						vignette.intensity = 0;
 						grayscale = true;
-						foreach (GameObject obj in closedEyesObjects) {
-							obj.SetActive(true);
+                        animator.runtimeAnimatorController = animController[1];
+                        foreach (GameObject obj in closedEyesObjects) {
+					        obj.SetActive(true);
 						}
 						foreach (GameObject obj in openEyesObjects) {
 							obj.SetActive(false);
