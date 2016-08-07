@@ -18,7 +18,7 @@ public class FinishStage : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (hasEntered && timer > 0) {
-			if (!animFinished) {
+			if (animFinished) {
 				pm.forceMove(1,0);
 				timer -= Time.deltaTime;
 			} else {
@@ -30,14 +30,15 @@ public class FinishStage : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {
-		pm = other.gameObject.GetComponent<PlayerMovement>();
-		anim = other.gameObject.GetComponent<Animator>();
+		pm = GetComponent<PlayerMovement>();
+		anim = GetComponent<Animator>();
 		pm.disableMovement();
+		pm.forceMove(0,0);
 		hasEntered = true;
-		Debug.Log("Entered");
 	}
 
 	public void animationFinished() {
+		Debug.Log(animFinished);
 		anim.SetBool("isWinning", false);
 		animFinished = true;
 	}

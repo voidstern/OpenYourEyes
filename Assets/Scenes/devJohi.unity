@@ -435,6 +435,23 @@ GameObject:
   m_PrefabParentObject: {fileID: 1000011720877232, guid: 850c6eea782c84cfc9ed92f550f84801,
     type: 2}
   m_PrefabInternal: {fileID: 1816189897}
+--- !u!114 &558081792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 558081791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07eae3b33ee89450fb19008e2696d426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 5
+--- !u!95 &558081794 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95000013506509516, guid: 850c6eea782c84cfc9ed92f550f84801,
+    type: 2}
+  m_PrefabInternal: {fileID: 1816189897}
 --- !u!1 &616539234
 GameObject:
   m_ObjectHideFlags: 0
@@ -445,7 +462,6 @@ GameObject:
   - 4: {fileID: 616539237}
   - 212: {fileID: 616539236}
   - 61: {fileID: 616539235}
-  - 114: {fileID: 616539238}
   m_Layer: 0
   m_Name: goal
   m_TagString: Untagged
@@ -513,18 +529,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
---- !u!114 &616539238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 616539234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07eae3b33ee89450fb19008e2696d426, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timer: 5
 --- !u!1 &629137418
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,6 +818,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114000013493136148, guid: ba2b4fa8fa54b4c3c84e048b8d6359e1,
+        type: 2}
+      propertyPath: animController.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4000013269687372, guid: ba2b4fa8fa54b4c3c84e048b8d6359e1, type: 2}
       propertyPath: m_LocalPosition.x
       value: -14
@@ -876,6 +885,21 @@ Prefab:
       propertyPath: ObjectToFollow
       value: 
       objectReference: {fileID: 558081791}
+    - target: {fileID: 114000013493136148, guid: ba2b4fa8fa54b4c3c84e048b8d6359e1,
+        type: 2}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 558081794}
+    - target: {fileID: 114000013493136148, guid: ba2b4fa8fa54b4c3c84e048b8d6359e1,
+        type: 2}
+      propertyPath: animController.Array.data[0]
+      value: 
+      objectReference: {fileID: 9100000, guid: 705ce758aaa5c462a980b64bb0f09c24, type: 2}
+    - target: {fileID: 114000013493136148, guid: ba2b4fa8fa54b4c3c84e048b8d6359e1,
+        type: 2}
+      propertyPath: animController.Array.data[1]
+      value: 
+      objectReference: {fileID: 9100000, guid: 04fff50ad80606549b3475a7578db9ee, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ba2b4fa8fa54b4c3c84e048b8d6359e1, type: 2}
   m_IsPrefabParent: 0
