@@ -41,12 +41,12 @@ public class PauseScreen : MonoBehaviour {
             }
 			paused = !paused;
         }
-        if (paused && Input.GetButtonDown("Jump"))
+        if (paused && Input.GetButtonDown("Submit"))
         {
             if (buttons[active].name.Equals("ResumeButton"))
             {
-				paused = !paused;
                 ResumeGame();
+				paused = !paused;
             }
             if (buttons[active].name.Equals("QuitButton"))
             {
