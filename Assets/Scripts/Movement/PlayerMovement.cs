@@ -16,7 +16,7 @@ public class PlayerMovement : InputController {
 	[SerializeField] private Transform groundPointRight;
 	[SerializeField] private float groundPointRadius;
 	[SerializeField] private LayerMask groundMask;
-	[SerializeField] private Camera camera;
+	[SerializeField] private Camera mainCamera;
 
 	protected Rigidbody2D rigidb;
 	protected Animator animator;
@@ -27,6 +27,8 @@ public class PlayerMovement : InputController {
 
 	protected bool isGroundedLeft;
 	protected bool isGroundedRight;
+
+	protected bool canMove;
 	
 	protected override void Awake() {
 		base.Awake();
@@ -35,10 +37,11 @@ public class PlayerMovement : InputController {
 		availableJumps = 0;
 		didJump = false;
 		reverseModX = reverseSpriteX ? -1f : 1f;
+		canMove = true;
 	}
 	// Update is called once per frame
 	protected override void Update() {
-		if (!camera.GetComponent<PauseScreen>().getState()) {
+		if (!mainCamera.GetComponent<PauseScreen>().getState() && canMove) {
 			base.Update();
 			isGroundedLeft = Physics2D.OverlapCircle(groundPointLeft.position, groundPointRadius, groundMask);
 			isGroundedRight = Physics2D.OverlapCircle(groundPointRight.position, groundPointRadius, groundMask);
@@ -110,5 +113,21 @@ public class PlayerMovement : InputController {
 		Gizmos.color = Color.green;
 		Gizmos.DrawSphere(groundPointLeft.position,groundPointRadius);
 		Gizmos.DrawSphere(groundPointRight.position,groundPointRadius);
+	}
+
+	public void disableMovement() {
+		canMove = false;
+	}
+	public void enableMovement() {
+		canMove = true;
+	}
+
+	public bool isGrounded() {
+		return (isGroundedLeft || isGroundedRight) ? true : false;
+	}
+
+	public void forceMove(float x, float y) {
+		inputHorizontal = x;
+		inputVertical = y;
 	}
 }

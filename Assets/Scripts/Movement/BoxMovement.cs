@@ -4,7 +4,7 @@ using UnityStandardAssets.ImageEffects;
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(BoxCollider2D))]
 public class BoxMovement : MonoBehaviour {
-	[SerializeField] private GameObject camera;
+	[SerializeField] private GameObject mainCamera;
 
 	private Rigidbody2D rigidb;
 
@@ -15,7 +15,7 @@ public class BoxMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if(camera.GetComponent<Grayscale>().enabled) {
+		if(mainCamera.GetComponent<Grayscale>().enabled) {
 			rigidb.constraints = RigidbodyConstraints2D.FreezeAll;
 		} else {
 			rigidb.constraints = RigidbodyConstraints2D.FreezeRotation;

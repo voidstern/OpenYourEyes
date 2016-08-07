@@ -70,7 +70,7 @@ public class BlendGreyscale : MonoBehaviour {
                 screenOverlay.intensity = 0;
                 lastFlash = 0;
             }
-            Debug.Log(vignette.intensity);
+
         }
        
 

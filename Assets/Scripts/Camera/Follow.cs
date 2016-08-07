@@ -11,6 +11,8 @@ public class Follow : MonoBehaviour {
 	public float ZOffset = 0;
 
 	public float UnderBounderyY = 0;
+	public float RightBounderyX = 0;
+	public float LeftBounderyX = 0;
 
 	public bool FollowX = true;
 	public bool FollowY = true;
@@ -33,7 +35,7 @@ public class Follow : MonoBehaviour {
 		targetPosition.z += ZOffset;
 
 		// copy position values only if we follow them
-		if(FollowX) sourcePosition.x = targetPosition.x;
+		if(FollowX && ((targetPosition.x >= LeftBounderyX && targetPosition.x <= RightBounderyX) || (LeftBounderyX == 0 && RightBounderyX == 0))) sourcePosition.x = targetPosition.x;
 		if(FollowY && targetPosition.y >= UnderBounderyY) sourcePosition.y = targetPosition.y;
 		if(FollowZ) sourcePosition.z = targetPosition.z;
 

@@ -326,7 +326,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.6759299, g: 0.915456, b: 0.97794116, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -545,6 +545,8 @@ MonoBehaviour:
   YOffset: 0
   ZOffset: 0
   UnderBounderyY: 0
+  RightBounderyX: 91
+  LeftBounderyX: -14
   FollowX: 1
   FollowY: 1
   FollowZ: 0
@@ -629,7 +631,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  smoothing: 3
+  smoothing: 2.5
 --- !u!114 &114000011419151866
 MonoBehaviour:
   m_ObjectHideFlags: 1

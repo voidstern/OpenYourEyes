@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24f44fd08de441c5a35365afd0e8e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 0}
+  mainCamera: {fileID: 0}
 --- !u!212 &212000010062056872
 SpriteRenderer:
   m_ObjectHideFlags: 1

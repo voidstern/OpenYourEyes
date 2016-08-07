@@ -69,7 +69,7 @@ public class PauseScreen : MonoBehaviour {
             active = (active - 1 + buttons.Length) % buttons.Length;
             buttons[active].colors = colorBlock;
         }
-        Debug.Log(active);
+
 
         coolDownTimer = coolDownTimer <= 0 ? 0 : coolDownTimer - Time.unscaledDeltaTime;
     }
