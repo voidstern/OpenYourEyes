@@ -7,12 +7,15 @@ public class FinishStage : MonoBehaviour {
 	private Animator anim;
 	private bool hasEntered;
 	private bool animFinished;
-
+	private bool loading;
+	private float startTimer;
 
 	// Use this for initialization
 	void Start () {
 		hasEntered = false;
 		animFinished = false;
+		loading = false;
+		startTimer = timer;
 	}
 	
 	// Update is called once per frame
@@ -21,16 +24,16 @@ public class FinishStage : MonoBehaviour {
 			if (animFinished) {
 				pm.forceMove(1,0);
 				timer -= Time.deltaTime;
+				if (!loading && timer < (startTimer / 2)) {
+					loading = true;
+					GetComponent<LevelLoader>().LoadNextLevel();
+				}
 			} else {
 				anim.SetBool("isWinning", true);
 			}
 		} else if (timer <= 0) {
 			pm.forceMove(0,0);
 		}
-        if (hasEntered && timer <= 0)
-        {
-            GetComponent<LevelLoader>().LoadNextLevel();
-        }
     }
 
 	void OnTriggerEnter2D(Collider2D other) {
