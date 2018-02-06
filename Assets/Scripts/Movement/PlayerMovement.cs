@@ -41,10 +41,10 @@ public class PlayerMovement : InputController {
 	}
 	// Update is called once per frame
 	protected override void Update() {
+		isGroundedLeft = Physics2D.OverlapCircle(groundPointLeft.position, groundPointRadius, groundMask);
+		isGroundedRight = Physics2D.OverlapCircle(groundPointRight.position, groundPointRadius, groundMask);
 		if (!mainCamera.GetComponent<PauseScreen>().getState() && canMove) {
 			base.Update();
-			isGroundedLeft = Physics2D.OverlapCircle(groundPointLeft.position, groundPointRadius, groundMask);
-			isGroundedRight = Physics2D.OverlapCircle(groundPointRight.position, groundPointRadius, groundMask);
 			if (inputJump && availableJumps > 0) {
 				didJump = true;
 			}
